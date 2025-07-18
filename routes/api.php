@@ -2,6 +2,10 @@
 use App\Models\Venue;
 use App\Http\Controllers\APIController;
 
+Route::get('/test', function () {
+    return response()->json(['message' => '✅ Laravel funcionando en Railway']);
+});
+
 Route::prefix('olympics')->group(function () {
     Route::post('/login', [APIController::class, 'login']);
     Route::post('/logout', [APIController::class, 'logout']);
